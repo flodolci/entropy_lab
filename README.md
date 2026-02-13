@@ -1,2 +1,5 @@
 # entropy_lab
-A computational playground for exploring entropy, information, inference, and learning in noisy systems.
+
+Modern learning algorithms, inference methods, and communication systems all revolve around the same core idea: Information flows through noisy systems.
+
+```entropy_lab``` is a Python laboratory for _experimenting_ with these ideas. 
