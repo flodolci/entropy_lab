@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 import numpy as np
 
+from entropy_lab.coding.code import Code
+
 class StochasticSystem(ABC):
     @abstractmethod
     def sample(self, T: int):
@@ -13,6 +15,6 @@ class StochasticSystem(ABC):
 
 class Channel(ABC):
     @abstractmethod
-    def transmit(self, x: np.ndarray) -> np.ndarray:
-        """Transmit input x through the channel, return noisy output"""
+    def transmit(self, code: Code, noise_level) -> Code:
+        """Transmit input code through the channel with noise level noise_level, return noisy output"""
         pass
