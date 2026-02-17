@@ -1,3 +1,5 @@
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/ea2ff2f4-2301-42ad-9d38-713f4af80c99" />
+
 # entropy_lab
 
 Modern learning algorithms, inference methods, and communication systems all revolve around the same core idea: Information flows through noisy systems.
