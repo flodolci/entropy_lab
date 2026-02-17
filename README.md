@@ -1,4 +1,6 @@
-<img alt="image" src="https://github.com/user-attachments/assets/ea2ff2f4-2301-42ad-9d38-713f4af80c99" style="width: 30%; height: auto;" />
+<p align="center">
+  <img alt="image" src="https://github.com/user-attachments/assets/ea2ff2f4-2301-42ad-9d38-713f4af80c99" style="width: 30%; height: auto;" />
+</p>
 
 # entropy_lab
 
