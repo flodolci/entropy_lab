@@ -10,12 +10,10 @@ def shannon_information(p, base = 2.0):
     """
     if p is None:
             raise ValueError("Provide p=...")
-    if not math.isfinite(p):
-        raise ValueError(f"Probability must be finite, got {p!r}.")
     if p < 0.0:
         raise ValueError(f"Probability must be >= 0, got {p}.")
     if p == 0.0:
         raise ValueError("P(x)=0 => information content is infinite (or undefined).")
     if p > 1.0:
         raise ValueError(f"Probability must be <= 1, got {p}.")
-    return -math.log(p) / math.log(base)
+    return - math.log(p, base)
