@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="./logo.jpg" alt="Entropy Labs logo" width="220">
+  <img src="./logo.jpg" alt="Entropy Labs logo" width="200">
 </p>
 
 Modern learning algorithms, inference methods, and communication systems all revolve around the same core idea: Information flows through noisy systems.
