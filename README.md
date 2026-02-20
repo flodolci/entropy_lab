@@ -1,5 +1,10 @@
 # Entropy Labs
 
+
+<p align="center">
+  <img src="./logo.jpg" alt="Entropy Labs logo" width="220">
+</p>
+
 Modern learning algorithms, inference methods, and communication systems all revolve around the same core idea: Information flows through noisy systems.
 
 ```entropy_lab``` is a Python laboratory for _experimenting_ with these ideas. 
