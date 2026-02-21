@@ -60,3 +60,31 @@ def compute_entropy(p: npt.NDArray[np.floating], base: float = 2.0, normalize: b
     for x in p_pos:
         h += x * shannon_information(x, base)
     return h
+
+
+def compute_joint_entropy(
+        p_xy: npt.NDArray[np.floating], 
+        base: float = 2.0, 
+        normalize: bool = False
+    ) -> float:
+    """
+    Compute the joint Shannon entropy H(X,Y) of a discrete joint distribution.
+
+    Parameters
+    ----------
+    p_xy : array_like of float
+        A 2-D array representing the joint probability table p(x,y)
+    base : float, optional
+        Logarithm base used for the entropy calculation (default: 2)
+    normalize: bool, optional
+        If True, rescale p_xy by its sum before computing entropy.
+
+    Returns
+    -------
+    float
+        Joint entropy H(X,Y) in units determined by `base`.
+    """
+    p_xy = np.asarray(p_xy, dtype=float)
+    if p_xy.ndim != 2:
+        raise ValueError(f"`p_xy` must be a 2-D array (got shape {p_xy.shape}).")
+    return compute_entropy(p_xy.ravel(), base=base, normalize=normalize)
