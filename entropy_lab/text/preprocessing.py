@@ -1,6 +1,11 @@
 import re
 import unicodedata
-from typing import List
+from typing import List, Union
+from pathlib import Path
+
+def read_txt_file(path: Union[str, Path], encoding: str = "utf-8") -> str:
+    p = Path(path)
+    return p.read_text(encoding=encoding)
 
 def preprocess_text(text: str) -> List[str]:
     """
@@ -46,3 +51,21 @@ def preprocess_text(text: str) -> List[str]:
 
     tokens = re.findall(token_pattern, text, flags=re.VERBOSE | re.UNICODE)
     return tokens
+
+_word_re = re.compile(r"[a-zA-Z]+(?:'[a-zA-Z]+)?(?:-[a-zA-Z]+)*")
+
+def clean_word_tokens(tokens: list[str]) -> list[str]:
+    """
+    Keep only real word-like tokens, drop punctuation/symbol tokens.
+    Also normalizes to lowercase.
+    """
+    cleaned: list[str] = []
+    for t in tokens:
+        t = t.strip().lower()
+        if not t:
+            continue
+        # keep token if it contains at least one word pattern
+        # and the whole token is word-like (so "," or "..." are dropped)
+        if _word_re.fullmatch(t):
+            cleaned.append(t)
+    return cleaned
