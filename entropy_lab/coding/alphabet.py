@@ -18,6 +18,7 @@ from __future__ import annotations
 from dataclasses import dataclass 
 from typing import Dict, Iterable, List, Sequence, Tuple, Optional, List, Mapping
 
+import math
 import numpy as np
 import numpy.typing as npt
 
@@ -346,6 +347,24 @@ class AlphabetDistribution:
             dropped_probability=dropped_prob,
             threshold=threshold,
         )
+    
+    def essential_bit_content(
+            self,
+            delta: float,
+            *,
+            base: float = 2.0,
+            subset: Optional[DeltaSubsetResult] = None
+    ) -> float: 
+        """
+        Essential bit content: log_base(|S_delta|)
+
+        If `subset` is provided, reuse it (must come from self.delta_subset(delta)).
+        """
+        if subset is None:
+            subset = self.delta_subset(delta)
+        k = len(subset.kept.symbols)
+        return math.log(k, base)
+    
     
     # ---- convencience wrappers for measures ----
     
