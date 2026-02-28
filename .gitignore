@@ -2,3 +2,5 @@
 .DS_Store?
 ._*
 data/
+.vscode 
+entropy_lab.egg-info/
