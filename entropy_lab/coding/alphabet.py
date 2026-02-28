@@ -356,7 +356,7 @@ class AlphabetDistribution:
     
     def kl_divergence(self, other: "AlphabetDistribution", base: float = 2.0) -> float:
         """Convenience: KL(this || other)"""
-        from entropy_lab.measures.entropy import compute_kl_divergence
+        from entropy_lab.measures.divergences import compute_kl_divergence
         return float(compute_kl_divergence(self, other, base=base))
 
 
